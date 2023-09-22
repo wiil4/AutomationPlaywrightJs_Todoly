@@ -3,12 +3,14 @@ class MainPage{
         this.page = page;
         this.logOutButton = page.locator('#ctl00_HeaderTopControl1_LinkButtonLogout');
 
+        //CREATE TASK
         this.inboxSectionButton = page.locator('//td[text()="Inbox"]');
         this.newTaskField = page.locator('#NewItemContentInput');
         this.addTaskButton = page.locator('#NewItemAddButton');
 
         this.lastTaskCreated = page.locator('//ul[@id="mainItemList"]//li[last()]');
-
+        
+        //UPDATE TASK
         this.optionsButton = page.locator("//img[contains(@style,'inline')]");
         this.editNameButton = page.locator("//ul[contains(@style,'block')]//a[text()='Edit']");
         this.newTaskNameField = page.locator('//li//textarea[@id="ItemEditTextbox"]');
@@ -27,20 +29,24 @@ class MainPage{
     }
 
     async hoverOverTask(taskName){
-        await page.locator(`(//td//div[text()="${taskName}"])[last()]`).hover();
+        await this.page.locator(`(//td//div[text()="${taskName}"])[last()]`).hover();
     }
 
-    async openTaskMenu(){
+    async openTaskOptions(){
         await this.optionsButton.click();
     }
 
-    async editNameOptionsButton(){
+    async clickEditNameOption(){
         await this.editNameButton.click();
     }
 
-    async updateTaskTo(newTaskName){
+    async updateTaskNameTo(newTaskName){
         await this.newTaskNameField.fill(newTaskName);
-        await this.page.press('Enter');
+        await this.newTaskNameField.press('Enter');
+    }
+
+    checkNewTaskName(taskName){
+        return this.page.locator(`(//li//div[text()="${taskName}"])[last()]`);
     }
 
 }
