@@ -6,15 +6,9 @@ class LoginSection{
         this.loginButton = page.locator('#ctl00_MainContent_LoginControl1_ButtonLogin');        
     }
 
-    async fillUsername(username){
+    async loginWithCredentials(username, password){
         await this.usernameField.fill(username);
-    }
-
-    async fillPassword(password){
         await this.passwordField.fill(password);
-    }
-
-    async clickLogin(){
         await this.loginButton.click();
     }
 }
