@@ -23,5 +23,5 @@ test('Create new Task',async({page})=>{
     await mainPage.openTaskOptions();
     await mainPage.clickEditNameOption();
     await mainPage.updateTaskNameTo(newTaskName);
-    await expect(mainPage.checkNewTaskName(newTaskName)).toHaveText(newTaskName);
+    await expect(mainPage.checkTaskName(newTaskName)).toHaveText(newTaskName);
 });
