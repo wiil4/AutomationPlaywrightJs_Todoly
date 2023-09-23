@@ -14,6 +14,9 @@ class MainPage{
         this.optionsButton = page.locator("//img[contains(@style,'inline')]");
         this.editNameButton = page.locator("//ul[contains(@style,'block')]//a[text()='Edit']");
         this.newTaskNameField = page.locator('//li//textarea[@id="ItemEditTextbox"]');
+
+        //DELETE TASK
+        this.deleteTaskButton = page.locator("//ul[contains(@style,'block')]//a[text()='Delete']");
     }
 
     async clickInbox(){
@@ -45,9 +48,14 @@ class MainPage{
         await this.newTaskNameField.press('Enter');
     }
 
-    checkNewTaskName(taskName){
+    checkTaskName(taskName){
         return this.page.locator(`(//li//div[text()="${taskName}"])[last()]`);
     }
+
+    async clickDeleteButton(){
+        await this.deleteTaskButton.click();
+    }
+
 
 }
 
