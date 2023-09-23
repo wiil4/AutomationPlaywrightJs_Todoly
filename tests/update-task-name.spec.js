@@ -12,13 +12,14 @@ test('Update a Task Name',async({page})=>{
     const loginSection = new LoginSection(page);
     const mainPage = new MainPage(page);
 
-    const taskName = 'Task345';
-    const newTaskName = 'Task123456';
+    const taskName = 'TaskToUpdate';
+    const newTaskName = 'UpdatedTask';
     
     await homePage.clickLoginButton();
     await loginSection.loginWithCredentials('willcorreos@gmail.com', 'todoly');
 
     await mainPage.clickInbox();
+    await mainPage.createNewTaskWithName(taskName);
     await mainPage.hoverOverTask(taskName);
     await mainPage.openTaskOptions();
     await mainPage.clickEditNameOption();

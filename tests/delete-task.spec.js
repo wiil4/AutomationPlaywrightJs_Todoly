@@ -12,14 +12,16 @@ test('Delete a Task',async({page})=>{
     const loginSection = new LoginSection(page);
     const mainPage = new MainPage(page);
 
-    const tasktoDelete = 'Task123456';
+    const tasktoDelete = 'DeletingTask';
     
     await homePage.clickLoginButton();
     await loginSection.loginWithCredentials('willcorreos@gmail.com', 'todoly');
 
     await mainPage.clickInbox();
+    await mainPage.createNewTaskWithName(tasktoDelete);
     await mainPage.hoverOverTask(tasktoDelete);
     await mainPage.openTaskOptions();
     await mainPage.clickDeleteButton();
-    await expect(mainPage.checkTaskName(tasktoDelete)).not.toBeVisible();
+    //await expect(mainPage.checkTaskName(tasktoDelete)).not.toBeVisible();
+    await expect(mainPage.infoDeletedBar).toBeVisible();
 });

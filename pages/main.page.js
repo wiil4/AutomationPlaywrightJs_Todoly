@@ -17,8 +17,10 @@ class MainPage{
 
         //DELETE TASK
         this.deleteTaskButton = page.locator("//ul[contains(@style,'block')]//a[text()='Delete']");
+        this.infoDeletedBar = page.locator('#HeaderMessageInfo');
     }
 
+    //CREATE TASK
     async clickInbox(){
         await this.inboxSectionButton.click();
     }
@@ -31,6 +33,7 @@ class MainPage{
         await this.addTaskButton.click();
     }
 
+    //UPDATE TASK
     async hoverOverTask(taskName){
         await this.page.locator(`(//td//div[text()="${taskName}"])[last()]`).hover();
     }
@@ -52,13 +55,19 @@ class MainPage{
         return this.page.locator(`(//li//div[text()="${taskName}"])[last()]`);
     }
 
+    //DELETE TASK
     async clickDeleteButton(){
         await this.deleteTaskButton.click();
     }
 
-
+    //LOG OUT
     async clickLogOut(){
         await this.logOutButton.click();
+    }
+
+    async createNewTaskWithName(taskName){
+        await this.newTaskField.fill(taskName);
+        await this.addTaskButton.click();
     }
 
 }

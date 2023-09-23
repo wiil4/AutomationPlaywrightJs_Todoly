@@ -12,7 +12,7 @@ test('Create a new Task',async({page})=>{
     const loginSection = new LoginSection(page);
     const mainPage = new MainPage(page);
 
-    const taskName = 'Task345';
+    const taskName = 'CreatedTask';
     
     await homePage.clickLoginButton();
     await loginSection.loginWithCredentials('willcorreos@gmail.com', 'todoly');
