@@ -14,7 +14,7 @@ test('LogOut operation',async({page})=>{
     const mainPage = new MainPage(page);
     
     await homePage.clickLoginButton();
-    await loginSection.loginWithCredentials(config.Login.username, config.Login.password);
+    await loginSection.loginWithCredentials(config.Login.email, config.Login.password);
     await expect(mainPage.logOutButton).toBeVisible();
     await mainPage.clickLogOut();
     await expect(homePage.loginButton).toBeVisible();

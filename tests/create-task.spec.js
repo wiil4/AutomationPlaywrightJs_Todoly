@@ -16,7 +16,7 @@ test('Create a new Task',async({page})=>{
     const taskName = config.CreateTask.taskName;
     
     await homePage.clickLoginButton();
-    await loginSection.loginWithCredentials(config.Login.username, config.Login.password);
+    await loginSection.loginWithCredentials(config.Login.email, config.Login.password);
 
     await mainPage.clickInbox();
     await mainPage.fillNewTask(taskName);

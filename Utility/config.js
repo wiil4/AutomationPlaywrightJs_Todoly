@@ -1,6 +1,6 @@
 const config = {
     Login: {
-        username: 'willcorreos@gmail.com',
+        email: 'willcorreos@gmail.com',
         password: 'todoly'
     },
     CreateTask: {

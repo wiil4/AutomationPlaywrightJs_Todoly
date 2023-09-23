@@ -17,7 +17,7 @@ test('Update a Task Name',async({page})=>{
     const newTaskName = config.UpdateTask.updateName;
     
     await homePage.clickLoginButton();
-    await loginSection.loginWithCredentials(config.Login.username,config.Login.password);
+    await loginSection.loginWithCredentials(config.Login.email,config.Login.password);
 
     await mainPage.clickInbox();
     await mainPage.createNewTaskWithName(taskName);
