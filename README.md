@@ -75,8 +75,8 @@ The resulting report of all executions will show a video about each one. However
 1. **login.spec** expects to be provided with valid credentials (username, password) so it will check if it logged in succesfully.
 2. **logout.spec** is signing in with valid credentials, but after checking that the user successfully logged in, it will log out and check if it is in the home page.
 3. **create-task.spec** signs in and clicks on the Inbox tab. After it creates a new Todo so it will expect the new task to be correctly created.
-4. **update-task-name.spec**, after logging in and clicking on Inbox tab, it will create a new Todk and then it will change the name of that task by accessing to it's options menu.
-5. **delete-task.spec** will create a Todo and then it will delete it by accessing to it's options menu.
+4. **update-task-name.spec**, after logging in and clicking on Inbox tab, it will create a new Todo and then it will change the name of that task by accessing to it's options menu, clicking in Edit option and filling the textbox.
+5. **delete-task.spec** will create a Todo and then it will delete it by accessing to it's options menu and clicking in Delete option.
 6. **signup.spec** is expecting an unregistered email to access. In this case, test mails were taken from [TempMail](https://temp-mail.org/es/) and added to **config.js** file.
 
 ## Cucumber
