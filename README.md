@@ -1,6 +1,6 @@
 # Todo.ly - PlaywrightJs + POM
 
-Automation project implementing playwright + POM in [Todo.ly](https://todo.ly).
+Automation project implementing playwright + POM + cucumber in [Todo.ly](https://todo.ly).
 
 ## Installation
 
@@ -86,3 +86,13 @@ At this time, Cucumber features were created and can be seen at:
 ```bash
 features/
 ```
+
+For executing cucumber and see the reports generated:
+
+```bash
+npx cucumber-js --publish
+```
+
+The results of execution are shown below:
+
+![cucumberResultsConsole](img/resultsCucumber.png)

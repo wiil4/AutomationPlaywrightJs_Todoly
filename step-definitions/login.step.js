@@ -1,7 +1,8 @@
-const{Given, When, Then, defineStep, Before} = require('@cucumber/cucumber')
-const{HomePage} = require('../pages/home.page')
-const{LoginSection} = require('../pages/login.section')
-const {MainPage} = require('../pages/main.page')
+const{Given, When, Then, defineStep} = require('@cucumber/cucumber')
+const{HomePage} = require('../pages-cucumber/home-page')
+const{LoginSection} = require('../pages-cucumber/login-section')
+const {MainPage} = require('../pages-cucumber/main-page')
+
 
 const homePage = new HomePage();
 const loginSection = new LoginSection();
@@ -19,6 +20,6 @@ defineStep(/^I fill the login form with "([^"]*)" and "([^"]*)"$/, async(usernam
     await loginSection.loginWithCredentials(username, password);
 });
 
-Then('Then I should see Todoly main page', async()=>{
-    await expect(mainPage.logOutButton).toBeVisible();
+defineStep('I should see Todoly main page', async()=>{
+    await mainPage.checkLogOut();
 });

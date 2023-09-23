@@ -7,8 +7,6 @@ class MainPage{
         this.inboxSectionButton = page.locator('//td[text()="Inbox"]');
         this.newTaskField = page.locator('#NewItemContentInput');
         this.addTaskButton = page.locator('#NewItemAddButton');
-
-        this.lastTaskCreated = page.locator('//ul[@id="mainItemList"]//li[last()]');
         
         //UPDATE TASK
         this.optionsButton = page.locator("//img[contains(@style,'inline')]");
