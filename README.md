@@ -29,12 +29,21 @@ after the test execution
 npm i @cucumber/cucumber
 ```
 
-## Test running
+## Test execution
 
 Playwright tests can be found at:
 ```bash
 tests/
 ```
+
+### Config.js file
+It is important to mention that a **config** file has been added so the variables for testing can be changed there:
+
+```bash
+Utility/config.js
+```
+
+### Tests information
 The resulting report of all executions will show a video about each one. However, the explanation about each test execution is given below.
 
 1. **login.spec** expects to be provided with valid credentials (username, password) so it will check if it logged in succesfully.
@@ -42,12 +51,12 @@ The resulting report of all executions will show a video about each one. However
 3. **create-task.spec** signs in and clicks on the Inbox tab. After it creates a new Todo so it will expect the new task to be correctly created.
 4. **update-task-name.spec**, after logging in and clicking on Inbox tab, it will create a new Todk and then it will change the name of that task by accessing to it's options menu.
 5. **delete-task.spec** will create a Todo and then it will delete it by accessing to it's options menu.
-6. **signup.spec** is expecting an unregistered email to access. In this case, test mails were taken from [TEMPMAIL](https://temp-mail.org/es/).
+6. **signup.spec** is expecting an unregistered email to access. In this case, test mails were taken from [TEMPMAIL](https://temp-mail.org/es/) and added to **config.js** file.
 
 ## Cucumber
 
 At this time, Cucumber features were created and can be seen at:
 
 ```bash
-features
+features/
 ```

@@ -2,6 +2,7 @@ const{test, expect} = require('@playwright/test');
 const{HomePage} = require('../pages/home.page');
 const{LoginSection} = require('../pages/login.section');
 const { MainPage } = require('../pages/main.page');
+const config = require('../Utility/config');
 
 test.beforeEach(async({page})=>{
     await page.goto('https://todo.ly');
@@ -12,11 +13,11 @@ test('Update a Task Name',async({page})=>{
     const loginSection = new LoginSection(page);
     const mainPage = new MainPage(page);
 
-    const taskName = 'TaskToUpdate';
-    const newTaskName = 'UpdatedTask';
+    const taskName = config.UpdateTask.taskName;
+    const newTaskName = config.UpdateTask.updateName;
     
     await homePage.clickLoginButton();
-    await loginSection.loginWithCredentials('willcorreos@gmail.com', 'todoly');
+    await loginSection.loginWithCredentials(config.Login.username,config.Login.password);
 
     await mainPage.clickInbox();
     await mainPage.createNewTaskWithName(taskName);
