@@ -7,7 +7,7 @@ test.beforeEach(async({page})=>{
     await page.goto('https://todo.ly');
 });
 
-test('Create new Task',async({page})=>{
+test('Update a Task Name',async({page})=>{
     const homePage = new HomePage(page);
     const loginSection = new LoginSection(page);
     const mainPage = new MainPage(page);

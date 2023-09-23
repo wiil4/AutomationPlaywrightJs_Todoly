@@ -7,6 +7,10 @@ class HomePage{
     async clickLoginButton(){
         await this.loginButton.click();
     }
+
+    async checkLoginButton(){
+        return this.page.locator("//img[contains(@src,'pagelogin')]");
+    }
 }
 
 module.exports = {HomePage}

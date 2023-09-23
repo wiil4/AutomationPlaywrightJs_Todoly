@@ -57,6 +57,10 @@ class MainPage{
     }
 
 
+    async clickLogOut(){
+        await this.logOutButton.click();
+    }
+
 }
 
 module.exports = {MainPage}
