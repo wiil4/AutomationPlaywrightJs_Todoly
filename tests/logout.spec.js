@@ -14,6 +14,7 @@ test('LogOut operation',async({page})=>{
     
     await homePage.clickLoginButton();
     await loginSection.loginWithCredentials('willcorreos@gmail.com','todoly');
+    await expect(mainPage.logOutButton).toBeVisible();
     await mainPage.clickLogOut();
     await expect(homePage.loginButton).toBeVisible();
 });
