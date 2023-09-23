@@ -20,6 +20,5 @@ test('Create a new Task',async({page})=>{
     await mainPage.clickInbox();
     await mainPage.fillNewTask(taskName);
     await mainPage.addNewTask();
-    //await expect(mainPage.lastTaskCreated).toHaveText(taskName);
     await expect(mainPage.checkTaskName(taskName)).toHaveText(taskName);
 });
